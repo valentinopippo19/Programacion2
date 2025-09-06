@@ -1,10 +1,10 @@
 package interfaz;
 
-public interface Ilista<T> {
-    void insertarInicio(T dato);
-    void insertarFin(T dato);
-    void eliminar(T dato);
-    Inodo<T> buscar(T dato);
+public interface Ilista {
+    void insertarInicio(Object dato);
+    void insertarFin(Object dato);
+    void eliminar(Object dato);
+    Inodo buscar(Object dato);
     void mostrarAdelante();
     void mostrarAtras();
     boolean estaVacia();
