@@ -1,24 +1,25 @@
 package Modulo;
 
 import interfaz.Ilista;
-
 import interfaz.Inodo;
 
-public class lista<T> implements Ilista<T> {
-    private Inodo<T> primero;
-    private Inodo<T> ultimo;
+public class Lista implements Ilista {
+    private Inodo primero;
+    private Inodo ultimo;
 
-    public lista() {
+    public Lista() {
         this.primero = null;
         this.ultimo = null;
     }
 
     @Override
-    public boolean estaVacia() { return primero == null; }
+    public boolean estaVacia() { 
+        return primero == null; 
+    }
 
     @Override
-    public void insertarInicio(T dato) {
-        Nodo<T> nuevo = new Nodo<>(dato);
+    public void insertarInicio(Object dato) {
+        Nodo nuevo = new Nodo(dato);
         if (estaVacia()) {
             primero = ultimo = nuevo;
         } else {
@@ -29,8 +30,8 @@ public class lista<T> implements Ilista<T> {
     }
 
     @Override
-    public void insertarFin(T dato) {
-        Nodo<T> nuevo = new Nodo<>(dato);
+    public void insertarFin(Object dato) {
+        Nodo nuevo = new Nodo(dato);
         if (estaVacia()) {
             primero = ultimo = nuevo;
         } else {
@@ -41,10 +42,10 @@ public class lista<T> implements Ilista<T> {
     }
 
     @Override
-    public void eliminar(T dato) {
+    public void eliminar(Object dato) {
         if (estaVacia()) return;
 
-        Inodo<T> actual = primero;
+        Inodo actual = primero;
         while (actual != null) {
             if (actual.getDato().equals(dato)) {
                 if (actual == primero) {
@@ -64,8 +65,8 @@ public class lista<T> implements Ilista<T> {
     }
 
     @Override
-    public Inodo<T> buscar(T dato) {
-        Inodo<T> actual = primero;
+    public Inodo buscar(Object dato) {
+        Inodo actual = primero;
         while (actual != null) {
             if (actual.getDato().equals(dato)) return actual;
             actual = actual.getSiguiente();
@@ -75,7 +76,7 @@ public class lista<T> implements Ilista<T> {
 
     @Override
     public void mostrarAdelante() {
-        Inodo<T> actual = primero;
+        Inodo actual = primero;
         while (actual != null) {
             System.out.print(actual.getDato() + " <-> ");
             actual = actual.getSiguiente();
@@ -85,7 +86,7 @@ public class lista<T> implements Ilista<T> {
 
     @Override
     public void mostrarAtras() {
-        Inodo<T> actual = ultimo;
+        Inodo actual = ultimo;
         while (actual != null) {
             System.out.print(actual.getDato() + " <-> ");
             actual = actual.getAnterior();
