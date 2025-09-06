@@ -2,32 +2,32 @@ package Modulo;
 
 import interfaz.Inodo;
 
-public class Nodo<T> implements Inodo<T> {
-    private T dato;
-    private Inodo<T> siguiente;
-    private Inodo<T> anterior;
+public class Nodo implements Inodo {
+    private Object dato;
+    private Inodo siguiente;
+    private Inodo anterior;
 
-    public Nodo(T dato) {
+    public Nodo(Object dato) {
         this.dato = dato;
         this.siguiente = null;
         this.anterior = null;
     }
 
     @Override
-    public T getDato() { return dato; }
+    public Object getDato() { return dato; }
 
     @Override
-    public void setDato(T dato) { this.dato = dato; }
+    public void setDato(Object dato) { this.dato = dato; }
 
     @Override
-    public Inodo<T> getSiguiente() { return siguiente; }
+    public Inodo getSiguiente() { return siguiente; }
 
     @Override
-    public void setSiguiente(Inodo<T> nodo) { this.siguiente = nodo; }
+    public void setSiguiente(Inodo nodo) { this.siguiente = nodo; }
 
     @Override
-    public Inodo<T> getAnterior() { return anterior; }
+    public Inodo getAnterior() { return anterior; }
 
     @Override
-    public void setAnterior(Inodo<T> nodo) { this.anterior = nodo; }
+    public void setAnterior(Inodo nodo) { this.anterior = nodo; }
 }
