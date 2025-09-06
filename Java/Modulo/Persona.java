@@ -2,18 +2,18 @@ package Modulo;
 
 public class Persona {
     private String nombre;
-    private lista<vehiculo> vehiculos;
+    private Lista vehiculos; // sin generics
 
     public Persona(String nombre) {
         this.nombre = nombre;
-        this.vehiculos = new lista<>();
+        this.vehiculos = new Lista();
     }
 
-    public void agregarVehiculo(vehiculo v) {
+    public void agregarVehiculo(Object v) {
         vehiculos.insertarFin(v);
     }
 
-    public void eliminarVehiculo(vehiculo v) {
+    public void eliminarVehiculo(Object v) {
         vehiculos.eliminar(v);
     }
 
