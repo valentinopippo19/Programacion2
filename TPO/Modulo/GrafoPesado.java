@@ -19,10 +19,13 @@ public class GrafoPesado<T> implements IGrafoPesado<T> {
      *
      * @param maxNodos número máximo de nodos en el grafo
      */
+    @SuppressWarnings("unchecked")
     public GrafoPesado(int maxNodos) {
-        nodos = new Nodo[maxNodos];
+        nodos = (Nodo<T>[]) new Nodo[maxNodos]; // Inicializa la variable de instancia correctamente
         matrizPesos = new int[maxNodos][maxNodos];
         cantidad = 0;
+
+        // Inicializa la matriz con -1
         for (int i = 0; i < maxNodos; i++)
             for (int j = 0; j < maxNodos; j++)
                 matrizPesos[i][j] = -1; // -1 indica sin conexión
@@ -104,3 +107,4 @@ public class GrafoPesado<T> implements IGrafoPesado<T> {
             System.out.println(nodos[i] + ": " + dist[i]);
     }
 }
+
