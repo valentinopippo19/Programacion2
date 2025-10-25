@@ -21,6 +21,7 @@ public class Grafo<T> implements IGrafo<T> {
      * @param maxNodos número máximo de nodos del grafo
      * @param dirigido true si el grafo es dirigido, false si es no dirigido
      */
+    @SuppressWarnings("unchecked")
     public Grafo(int maxNodos, boolean dirigido) {
         nodos = new Nodo[maxNodos];
         matrizAdyacencia = new int[maxNodos][maxNodos];
@@ -131,3 +132,4 @@ public class Grafo<T> implements IGrafo<T> {
         return resultado;
     }
 }
+
